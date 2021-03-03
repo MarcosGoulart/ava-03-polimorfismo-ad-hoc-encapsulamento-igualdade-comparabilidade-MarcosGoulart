@@ -22,6 +22,34 @@ public class Data implements Comparable{
     this.ano = ano;
   }
 
+  public int getAno() {
+    return ano;
+  }
+  public int getDia() {
+    return dia;
+  }
+  public int getMes() {
+    return mes;
+  }
+  public String getData(){
+    if(this.dia < 10 && this.mes < 10) return "0"+this.dia+"/"+"0"+this.mes+"/"+this.ano;
+    else if (this.dia < 10) return "0" + this.dia + "/" + this.mes + "/" + this.ano;
+    else if (this.mes < 10) return this.dia + "/" + "0" + this.mes + "/" + this.ano;
+    else return this.dia +"/"+ this.mes +"/"+ this.ano;
+  }
+  public void setAno(int ano) {
+    this.validar(this.dia, this.mes, ano);
+    this.ano = ano;
+  }
+  public void setDia(int dia) {
+    this.validar(dia, this.mes, this.ano);
+    this.dia = dia;
+  }
+  public void setMes(int mes) {
+    this.validar(this.dia, mes, this.ano);
+    this.mes = mes;
+  }
+
   public void validar(int dia, int mes, int ano){
     boolean bissexto = false;
     if (ano % 4 == 0 && ano % 100 != 0) bissexto = true;

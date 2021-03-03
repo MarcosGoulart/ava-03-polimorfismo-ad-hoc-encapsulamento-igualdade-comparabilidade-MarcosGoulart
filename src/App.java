@@ -125,6 +125,8 @@ class App {
     System.out.println(data2.equals(data4) == false);
     System.out.println(data1.compareTo(data5) < 0);
     System.out.println(data1.compareTo(data6) > 0);
+    data1.setDia(2);
+    System.out.println(data1.equals(data2) == false);
 
 
     // VEICULO
